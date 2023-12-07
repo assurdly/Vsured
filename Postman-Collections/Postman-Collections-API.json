@@ -12927,10 +12927,39 @@
 			"id": "31ad498a-2952-4b96-b0e1-225e7e8fc360"
 		},
 		{
-			"name": "Payments Copy",
+			"name": "Payments QA",
 			"item": [
 				{
 					"name": "get payments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a15e1a79-6920-4afc-ac2f-d234c57b218b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Your test message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
+									"});\r",
+									"pm.test(\"Your test data to exist\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.exist;\r",
+									"});\r",
+									"pm.test(\"Your test datas to exist\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0].id).to.exist\r",
+									"    pm.expect(jsonData.data[0].name).to.exist\r",
+									"    pm.expect(jsonData.data[0].amount).to.exist\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "afd02915-96cb-4a3b-9e47-f0d6476f6b0b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -13035,7 +13064,7 @@
 					]
 				},
 				{
-					"name": "get payments Copy 3",
+					"name": "get payments-Empty page",
 					"id": "28417ec7-548a-4761-83b9-3cc06f44d014",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -13138,12 +13167,117 @@
 							"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Montly Room rent\",\n            \"description\": \"rent that has to be paid every month\",\n            \"amount\": 1000,\n            \"currency\": \"TZS\",\n            \"period\": \"hourly\"\n        }\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "get payments Copy 4",
+					"id": "d84f87f6-5573-48aa-a34f-6a454bc4d276",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/payment/list?page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"payment",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "15af1d1f-51bd-4d35-ba58-59268d046f52",
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/payment/list?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"list"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "167"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a7-j1o5N5MoKSXvfPZN4wWSHHEX8/k\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Nov 2023 02:52:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Montly Room rent\",\n            \"description\": \"rent that has to be paid every month\",\n            \"amount\": 1000,\n            \"currency\": \"TZS\",\n            \"period\": \"hourly\"\n        }\n    ]\n}"
+						}
+					]
 				}
 			],
 			"id": "0f831b75-4f20-4bd2-821b-f028cf9e5ddb"
 		},
 		{
-			"name": "Panic Copy",
+			"name": "Panic QA",
 			"item": [
 				{
 					"name": "create panic",

@@ -11800,12 +11800,18 @@
 							]
 						},
 						{
-							"name": "get details of subscription and upcoming or completed payments Copy 3",
+							"name": "get details of subscription and upcoming or completed payments-Empty status",
 							"id": "12e0788e-2757-4d2e-a714-8424ec6f4775",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [
 									{
@@ -11815,7 +11821,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/subscription/show?id=3&page=1&status=paid&user=3",
+									"raw": "{{baseUrl}}/subscription/show?id=3&page=1&user=3",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -11834,7 +11840,8 @@
 										},
 										{
 											"key": "status",
-											"value": "paid"
+											"value": "paid",
+											"disabled": true
 										},
 										{
 											"key": "user",
@@ -11929,8 +11936,138 @@
 							]
 						},
 						{
-							"name": "get details of subscription and upcoming or completed payments Copy 4",
+							"name": "get details of subscription and upcoming or completed payments-Empty User",
 							"id": "bf66a02a-f0fd-47e0-8f78-fca7479649c0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/subscription/show?id=3&page=1&status=paid",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subscription",
+										"show"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "status",
+											"value": "paid"
+										},
+										{
+											"key": "user",
+											"value": "3",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "5b2899e3-9b32-4084-a033-f5700461d653",
+									"name": "sucess",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "auth-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/subscription/show?id=3&page=1&status=paid&user=3",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"subscription",
+												"show"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "3"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "status",
+													"value": "paid"
+												},
+												{
+													"key": "user",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "457"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1c9-8A59B1OOUywUaHsqoWxuCifeHkc\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 29 Nov 2023 20:31:29 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": {\n            \"id\": 3,\n            \"user\": 3,\n            \"paymentType\": \"Monthly Rend\",\n            \"renewAmount\": 1000,\n            \"currency\": \"TZS\",\n            \"startDate\": \"2023-11-23T20:22:02.000Z\",\n            \"renewDate\": \"2023-11-23T20:22:02.000Z\",\n            \"createdBy\": 1,\n            \"status\": \"paid\",\n            \"remark\": null,\n            \"userSubscriptions\": {\n                \"name\": \"Vipin\",\n                \"image\": null\n            }\n        },\n        \"userSubscriptions\": [\n            {\n                \"id\": 3,\n                \"paymentType\": \"Monthly Rend\",\n                \"renewAmount\": 1000,\n                \"currency\": \"TZS\",\n                \"renewDate\": \"2023-11-23T20:22:02.000Z\",\n                \"status\": \"paid\",\n                \"remark\": null\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "get details of subscription and upcoming or completed payments Copy 5",
+							"id": "9c3c9271-8b14-45a5-b4df-752ea21bceff",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -11974,7 +12111,136 @@
 							},
 							"response": [
 								{
-									"id": "5b2899e3-9b32-4084-a033-f5700461d653",
+									"id": "d716d1de-cb2b-4e31-8a1a-4bfe2eb64832",
+									"name": "sucess",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "auth-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/subscription/show?id=3&page=1&status=paid&user=3",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"subscription",
+												"show"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "3"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "status",
+													"value": "paid"
+												},
+												{
+													"key": "user",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "457"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1c9-8A59B1OOUywUaHsqoWxuCifeHkc\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 29 Nov 2023 20:31:29 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": {\n            \"id\": 3,\n            \"user\": 3,\n            \"paymentType\": \"Monthly Rend\",\n            \"renewAmount\": 1000,\n            \"currency\": \"TZS\",\n            \"startDate\": \"2023-11-23T20:22:02.000Z\",\n            \"renewDate\": \"2023-11-23T20:22:02.000Z\",\n            \"createdBy\": 1,\n            \"status\": \"paid\",\n            \"remark\": null,\n            \"userSubscriptions\": {\n                \"name\": \"Vipin\",\n                \"image\": null\n            }\n        },\n        \"userSubscriptions\": [\n            {\n                \"id\": 3,\n                \"paymentType\": \"Monthly Rend\",\n                \"renewAmount\": 1000,\n                \"currency\": \"TZS\",\n                \"renewDate\": \"2023-11-23T20:22:02.000Z\",\n                \"status\": \"paid\",\n                \"remark\": null\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "get details of subscription and upcoming or completed payments Copy 6",
+							"id": "e817132a-9bc6-4440-9931-d467f40776f1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/subscription/show?id=3&page=1&status=paid&user=3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subscription",
+										"show"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "status",
+											"value": "paid"
+										},
+										{
+											"key": "user",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "cde50027-8385-4d26-a3cd-5a2c1331ace8",
 									"name": "sucess",
 									"originalRequest": {
 										"method": "GET",

@@ -10697,6 +10697,26 @@
 						},
 						{
 							"name": "create subscription-Empty renewDate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "04e038eb-f79a-4f5e-a1a0-c8f478bb7894",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Your test error message\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.error).to.include(\"Incorrect datetime value\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "c3833197-14c3-43c9-8ae5-bb8a0d9888e6",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -10712,7 +10732,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"user\":3,\r\n    \"paymentType\":1,\r\n    \"renewAmount\":1000,\r\n    \"currency\":\"TZS\",\r\n    \"startDate\":\"2023-11-24 01:52:02\",\r\n    \"renewDate\":\"2023-11-24 01:52:02\"\r\n}",
+									"raw": "{\r\n    \"user\":3,\r\n    \"paymentType\":1,\r\n    \"renewAmount\":1000,\r\n    \"currency\":\"TZS\",\r\n    \"startDate\":\"2023-11-24 01:52:02\",\r\n    \"renewDate\":\"\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -10787,192 +10807,6 @@
 									"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
 								}
 							]
-						},
-						{
-							"name": "create subscription Copy 8",
-							"id": "a05ce3d8-fa2e-4438-97a0-81b0bc7214ae",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "auth-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"user\":3,\r\n    \"paymentType\":1,\r\n    \"renewAmount\":1000,\r\n    \"currency\":\"TZS\",\r\n    \"startDate\":\"2023-11-24 01:52:02\",\r\n    \"renewDate\":\"2023-11-24 01:52:02\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/subscription/new"
-							},
-							"response": [
-								{
-									"id": "a637a253-77b7-47c1-a660-3cd8ae650cb8",
-									"name": "success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "auth-token",
-												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"user\":3,\r\n    \"paymentType\":1,\r\n    \"renewAmount\":1000,\r\n    \"currency\":\"TZS\",\r\n    \"startDate\":\"2023-11-24 01:52:02\",\r\n    \"renewDate\":\"2023-11-24 01:52:02\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/subscription/new"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "31"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 24 Nov 2023 03:07:45 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
-								}
-							]
-						},
-						{
-							"name": "create subscription Copy 9",
-							"id": "915f27ab-c3a4-40ba-98b1-354d693a7a23",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "auth-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"user\":3,\r\n    \"paymentType\":1,\r\n    \"renewAmount\":1000,\r\n    \"currency\":\"TZS\",\r\n    \"startDate\":\"2023-11-24 01:52:02\",\r\n    \"renewDate\":\"2023-11-24 01:52:02\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/subscription/new"
-							},
-							"response": [
-								{
-									"id": "806cadc1-ee05-48ca-9ee9-f16f5217a65f",
-									"name": "success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "auth-token",
-												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"user\":3,\r\n    \"paymentType\":1,\r\n    \"renewAmount\":1000,\r\n    \"currency\":\"TZS\",\r\n    \"startDate\":\"2023-11-24 01:52:02\",\r\n    \"renewDate\":\"2023-11-24 01:52:02\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/subscription/new"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "31"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 24 Nov 2023 03:07:45 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
-								}
-							]
 						}
 					],
 					"id": "37b57649-1351-4727-8ad9-62b4546750a8"
@@ -10982,7 +10816,147 @@
 					"item": [
 						{
 							"name": "get list of subscriptions of all users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ad8d4933-c625-43a6-a41a-561ffee0e9aa",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Your test message\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
+											"});\r",
+											"pm.test(\"Your test data to exist\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.data).to.exist;\r",
+											"});\r",
+											"pm.test(\"Your test datas to exist\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.data[0].id).to.exist\r",
+											"    pm.expect(jsonData.data[0].user).to.exist\r",
+											"    pm.expect(jsonData.data[0].paymentType).to.exist\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "a635d542-e662-4940-950f-3e51dcfadb96",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/subscription/list?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subscription",
+										"list"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "5dcc6fcb-52c7-49c0-ba03-f3978a048c52",
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "auth-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/subscription/list?page=1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"subscription",
+												"list"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "348"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"15c-/yEuLfm2U7PlNYh+x4H0RVAekd8\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 Nov 2023 03:26:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"user\": 3,\n            \"paymentType\": 1,\n            \"renewAmount\": 1000,\n            \"currency\": \"TZS\",\n            \"renewDate\": \"2023-11-23T20:22:02.000Z\",\n            \"userSubscriptions\": {\n                \"name\": \"Vipin\",\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 1,\n            \"user\": 3,\n            \"paymentType\": 1,\n            \"renewAmount\": 1000,\n            \"currency\": \"TZS\",\n            \"renewDate\": \"2023-11-23T20:22:02.000Z\",\n            \"userSubscriptions\": {\n                \"name\": \"Vipin\",\n                \"image\": null\n            }\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get list of subscriptions of all users Copy",
+							"id": "d2e9fecd-0d78-4e84-8537-104f072b6b2b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -11014,7 +10988,112 @@
 							},
 							"response": [
 								{
-									"id": "5dcc6fcb-52c7-49c0-ba03-f3978a048c52",
+									"id": "f6771f91-8513-4096-a6c5-3176c53d1453",
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "auth-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/subscription/list?page=1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"subscription",
+												"list"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "348"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"15c-/yEuLfm2U7PlNYh+x4H0RVAekd8\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 Nov 2023 03:26:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"user\": 3,\n            \"paymentType\": 1,\n            \"renewAmount\": 1000,\n            \"currency\": \"TZS\",\n            \"renewDate\": \"2023-11-23T20:22:02.000Z\",\n            \"userSubscriptions\": {\n                \"name\": \"Vipin\",\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 1,\n            \"user\": 3,\n            \"paymentType\": 1,\n            \"renewAmount\": 1000,\n            \"currency\": \"TZS\",\n            \"renewDate\": \"2023-11-23T20:22:02.000Z\",\n            \"userSubscriptions\": {\n                \"name\": \"Vipin\",\n                \"image\": null\n            }\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get list of subscriptions of all users Copy 2",
+							"id": "34448d96-38a6-409c-9de3-314d7d483d74",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/subscription/list?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subscription",
+										"list"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "57fff8bd-e80d-4ec3-8018-9672116a5d73",
 									"name": "success",
 									"originalRequest": {
 										"method": "GET",

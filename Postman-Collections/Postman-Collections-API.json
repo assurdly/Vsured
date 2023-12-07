@@ -53,7 +53,7 @@
 											"script": {
 												"id": "e0763179-67c7-45c0-8686-9c4f6788a73a",
 												"exec": [
-													"pm.environment.set(\"Base_Url\", \"http://backend.aapkistore.com/api\")"
+													"pm.environment.set(\"baseUrl\", \"http://backend.aapkistore.com/api\")"
 												],
 												"type": "text/javascript"
 											}

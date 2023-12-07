@@ -13352,7 +13352,31 @@
 					]
 				},
 				{
-					"name": "create panic Copy 2",
+					"name": "create panic-Empty latitude field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "be4f19f9-ab4e-405f-8c66-210d0aa494e9",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Your test error message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].msg).to.eql(\"latitude required\");\r",
+									"});\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].type).to.eql(\"field\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "576b14a5-3cb1-4c0f-b1b5-940c5fb3caab",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -13368,7 +13392,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
+							"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":\"\",\r\n    \"longitude\":24.00020\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

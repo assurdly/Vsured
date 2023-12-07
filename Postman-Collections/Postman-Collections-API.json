@@ -13147,6 +13147,28 @@
 			"item": [
 				{
 					"name": "create panic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a9a887fc-b383-450a-93ce-57229117c6b7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
+									"});\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.exist;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "6ef18d0e-0500-49ac-bcda-5651aff347af",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -13251,7 +13273,11 @@
 									"});\r",
 									"pm.test(\"Your test error message\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.error).to.eql(\"emergency required\");\r",
+									"    pm.expect(jsonData.error[0].msg).to.eql(\"emergency required\");\r",
+									"});\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].type).to.eql(\"field\");\r",
 									"});\r",
 									"\r",
 									""
@@ -13469,7 +13495,31 @@
 					]
 				},
 				{
-					"name": "create panic Copy 3",
+					"name": "create panic-Empty longitude",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8286db47-2a72-4536-871a-3e7632f1ff3e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Your test error message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].msg).to.eql(\"longitude required\");\r",
+									"});\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].type).to.eql(\"field\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "8c465599-bcf5-4fe9-b5fc-2a8bc209dd1c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -13485,7 +13535,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
+							"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":\"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -13590,6 +13640,99 @@
 					"response": [
 						{
 							"id": "991483c2-28a3-4a0f-84de-b3d5e661485e",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93IiwiL3BhbmljIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9hcGkvcGFuaWMvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3OTk0MzR9.eyMkBmf50ey_k7oxEMZfOh5vzk9TviXoQvxVtMKoW7I",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/panic/new"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Nov 2023 04:18:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "create panic Copy 5",
+					"id": "db4fb57e-6eaf-49e1-8c44-0a56e25e7000",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93IiwiL3BhbmljIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9hcGkvcGFuaWMvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3OTk0MzR9.eyMkBmf50ey_k7oxEMZfOh5vzk9TviXoQvxVtMKoW7I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/panic/new"
+					},
+					"response": [
+						{
+							"id": "d43874cc-7c56-4d63-a497-eec3dec559c9",
 							"name": "success",
 							"originalRequest": {
 								"method": "POST",

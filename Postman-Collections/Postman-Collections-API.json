@@ -10583,7 +10583,27 @@
 							]
 						},
 						{
-							"name": "create subscription Copy 6",
+							"name": "create subscription-Empty startDate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cdc88d53-8178-4c59-9403-2913ca0c382a",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Your test error message\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.error).to.include(\"Incorrect datetime value\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "8044b4f6-cf70-496c-b2a4-97b1656e80ef",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -10599,7 +10619,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"user\":3,\r\n    \"paymentType\":1,\r\n    \"renewAmount\":1000,\r\n    \"currency\":\"TZS\",\r\n    \"startDate\":\"2023-11-24 01:52:02\",\r\n    \"renewDate\":\"2023-11-24 01:52:02\"\r\n}",
+									"raw": "{\r\n    \"user\":3,\r\n    \"paymentType\":1,\r\n    \"renewAmount\":1000,\r\n    \"currency\":\"TZS\",\r\n    \"startDate\":\"\",\r\n    \"renewDate\":\"2023-11-24 01:52:02\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -10676,7 +10696,7 @@
 							]
 						},
 						{
-							"name": "create subscription Copy 7",
+							"name": "create subscription-Empty renewDate",
 							"id": "c3833197-14c3-43c9-8ae5-bb8a0d9888e6",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true

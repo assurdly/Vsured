@@ -13174,6 +13174,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -13291,6 +13297,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -13408,6 +13420,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -13525,6 +13543,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -13612,12 +13636,37 @@
 					]
 				},
 				{
-					"name": "create panic Copy 4",
+					"name": "create panic-No Auth Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "da538330-9d57-4478-874e-c099cdde50a5",
+								"exec": [
+									"var resp = JSON.parse(responseBody)\r",
+									"\r",
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Error message is returned\", function () {\r",
+									"     pm.expect(resp.statusCode).to.eql(401);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "c031a137-3249-44c3-8e3e-2e4006c43806",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -13705,12 +13754,40 @@
 					]
 				},
 				{
-					"name": "create panic Copy 5",
+					"name": "create panic-Invalid/Mismatched Auth token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "997d3c44-5997-4ca2-b2ef-c8d4b1554b25",
+								"exec": [
+									"var resp = JSON.parse(responseBody)\r",
+									"\r",
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Error message is returned\", function () {\r",
+									"     pm.expect(resp.statusCode).to.eql(401);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "db4fb57e-6eaf-49e1-8c44-0a56e25e7000",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGJ7UWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvcmVzb3VyY2VzL3BhbmljcyIsIi9hcGkvcGFuaWMvbGlzdCIsIi9hcGkvcGFuaWMvbmV3IiwiL2FwaS9wYW5pYy9kZWxldGUiLCIvcmVzb3VyY2VzL2d1ZXN0cyIsIi9yZXNvdXJjZXMvZXZlbnRzIiwiL3Jlc291cmNlcy9hcHBvaW50bWVudHMiLCIvcmVzb3VyY2VzL2FjY2Vzc19jb2RlcyIsIi9hcGkvZ3Vlc3QvbGlzdCIsIi9hcGkvZ3Vlc3QvbmV3IiwiL2FwaS9ndWVzdC9kZWxldGUiLCIvYXBpL2d1ZXN0L2VkaXQiLCIvYXBpL2d1ZXN0L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiXSwibGFuZ3VhZ2UiOjEsImxldmVsIjoxfSwiaWF0IjoxNzAxODcwMDc5fQ.rVrb2bnOiY6XvolEluqDxVCt4v99GYXDs2KizNfYa_I"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{

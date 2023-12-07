@@ -10955,7 +10955,7 @@
 							]
 						},
 						{
-							"name": "get list of subscriptions of all users Copy",
+							"name": "get list of subscriptions of all users-Empty page",
 							"id": "d2e9fecd-0d78-4e84-8537-104f072b6b2b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -10970,7 +10970,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/subscription/list?page=1",
+									"raw": "{{baseUrl}}/subscription/list",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -10981,7 +10981,8 @@
 									"query": [
 										{
 											"key": "page",
-											"value": "1"
+											"value": "1",
+											"disabled": true
 										}
 									]
 								}

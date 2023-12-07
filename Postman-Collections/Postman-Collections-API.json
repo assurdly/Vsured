@@ -13143,105 +13143,6 @@
 			"id": "0f831b75-4f20-4bd2-821b-f028cf9e5ddb"
 		},
 		{
-			"name": "Panic",
-			"item": [
-				{
-					"name": "create panic",
-					"id": "cd716d2d-c34d-4d21-84df-c389737d0bde",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93IiwiL3BhbmljIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9hcGkvcGFuaWMvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3OTk0MzR9.eyMkBmf50ey_k7oxEMZfOh5vzk9TviXoQvxVtMKoW7I",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/panic/new"
-					},
-					"response": [
-						{
-							"id": "997db5b9-5808-43e8-8151-2096ccc42a83",
-							"name": "success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "auth-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93IiwiL3BhbmljIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9hcGkvcGFuaWMvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3OTk0MzR9.eyMkBmf50ey_k7oxEMZfOh5vzk9TviXoQvxVtMKoW7I",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/panic/new"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "31"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 24 Nov 2023 04:18:28 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
-						}
-					]
-				}
-			],
-			"id": "9a400066-d6c4-4431-85b8-bddefa13bb77"
-		},
-		{
 			"name": "Panic Copy",
 			"item": [
 				{
@@ -13338,8 +13239,121 @@
 					]
 				},
 				{
-					"name": "create panic Copy",
+					"name": "create panic-Empty emergency field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cfaeca74-3be1-4e96-96d1-cb2bad8213a0",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Your test error message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error).to.eql(\"emergency required\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "ad12b041-fe72-43da-b0a8-0a0a007b8623",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93IiwiL3BhbmljIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9hcGkvcGFuaWMvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3OTk0MzR9.eyMkBmf50ey_k7oxEMZfOh5vzk9TviXoQvxVtMKoW7I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emergency\":\"\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/panic/new"
+					},
+					"response": [
+						{
+							"id": "1e69fdad-a649-4e80-9f9f-f6c9deeaa039",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93IiwiL3BhbmljIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9hcGkvcGFuaWMvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3OTk0MzR9.eyMkBmf50ey_k7oxEMZfOh5vzk9TviXoQvxVtMKoW7I",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/panic/new"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Nov 2023 04:18:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "create panic Copy 2",
+					"id": "576b14a5-3cb1-4c0f-b1b5-940c5fb3caab",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -13365,7 +13379,193 @@
 					},
 					"response": [
 						{
-							"id": "1e69fdad-a649-4e80-9f9f-f6c9deeaa039",
+							"id": "e78e9375-9e44-4cf4-8044-3132ac3ffe66",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93IiwiL3BhbmljIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9hcGkvcGFuaWMvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3OTk0MzR9.eyMkBmf50ey_k7oxEMZfOh5vzk9TviXoQvxVtMKoW7I",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/panic/new"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Nov 2023 04:18:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "create panic Copy 3",
+					"id": "8c465599-bcf5-4fe9-b5fc-2a8bc209dd1c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93IiwiL3BhbmljIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9hcGkvcGFuaWMvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3OTk0MzR9.eyMkBmf50ey_k7oxEMZfOh5vzk9TviXoQvxVtMKoW7I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/panic/new"
+					},
+					"response": [
+						{
+							"id": "ac643a9f-4aab-4dca-827f-d88d12effa90",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93IiwiL3BhbmljIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9hcGkvcGFuaWMvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3OTk0MzR9.eyMkBmf50ey_k7oxEMZfOh5vzk9TviXoQvxVtMKoW7I",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/panic/new"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Nov 2023 04:18:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "create panic Copy 4",
+					"id": "c031a137-3249-44c3-8e3e-2e4006c43806",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93IiwiL3BhbmljIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9hcGkvcGFuaWMvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3OTk0MzR9.eyMkBmf50ey_k7oxEMZfOh5vzk9TviXoQvxVtMKoW7I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emergency\":\"fire\",\r\n    \"latitude\":23.0001,\r\n    \"longitude\":24.00020\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/panic/new"
+					},
+					"response": [
+						{
+							"id": "991483c2-28a3-4a0f-84de-b3d5e661485e",
 							"name": "success",
 							"originalRequest": {
 								"method": "POST",

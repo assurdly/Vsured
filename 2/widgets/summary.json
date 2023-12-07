@@ -1,1 +1,1 @@
-{"reportName":"Vsured - API Quality Readiness","testRuns":[],"statistic":{"failed":0,"broken":0,"skipped":0,"passed":66,"unknown":0,"total":66},"time":{"start":1701953589094,"stop":1701953590720,"duration":1626,"minDuration":12,"maxDuration":110,"sumDuration":1416}}
+{"reportName":"Vsured - API Quality Readiness","testRuns":[],"statistic":{"failed":0,"broken":0,"skipped":0,"passed":66,"unknown":0,"total":66},"time":{"start":1701953991291,"stop":1701953992437,"duration":1146,"minDuration":8,"maxDuration":68,"sumDuration":971}}

@@ -1,0 +1,1 @@
+{"message":"Success","data":[{"id":1,"name":"Community 8","active":true,"logo":"https://google.com","totalUserCount":2},{"id":2,"name":"Community 9","active":true,"logo":"https://google.com","totalUserCount":2}]}

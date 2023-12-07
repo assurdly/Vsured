@@ -11348,10 +11348,7 @@
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.value).to.eql(100);\r",
-											"});"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -11362,6 +11359,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [
 									{
@@ -11485,12 +11488,38 @@
 							]
 						},
 						{
-							"name": "get details of subscription and upcoming or completed payments Copy",
+							"name": "get details of subscription and upcoming or completed payments-Without ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e497d0bf-05a0-43f7-82ef-9baadfbd1894",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Your test error message\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.error[0].msg).to.eql(\"id required\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "a6063f44-ae24-42e5-8690-c438d147a59f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [
 									{
@@ -11500,7 +11529,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/subscription/show?id=3&page=1&status=paid&user=3",
+									"raw": "{{baseUrl}}/subscription/show?page=1&status=paid&user=3",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -11511,7 +11540,8 @@
 									"query": [
 										{
 											"key": "id",
-											"value": "3"
+											"value": "3",
+											"disabled": true
 										},
 										{
 											"key": "page",

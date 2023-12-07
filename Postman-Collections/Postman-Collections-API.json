@@ -11644,12 +11644,38 @@
 							]
 						},
 						{
-							"name": "get details of subscription and upcoming or completed payments Copy 2",
+							"name": "get details of subscription and upcoming or completed payments-Empty page",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b9ec8cd0-c3f0-4a4c-beb3-e54cb71a7bdd",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Your test error message\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.error[0].msg).to.eql(\"page required\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "1d578189-8d72-45b6-817b-3f34f4ba51e7",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [
 									{
@@ -11659,7 +11685,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/subscription/show?id=3&page=1&status=paid&user=3",
+									"raw": "{{baseUrl}}/subscription/show?id=3&status=paid&user=3",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -11674,7 +11700,8 @@
 										},
 										{
 											"key": "page",
-											"value": "1"
+											"value": "1",
+											"disabled": true
 										},
 										{
 											"key": "status",

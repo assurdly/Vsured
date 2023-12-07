@@ -1,0 +1,1 @@
+{"error":[{"type":"field","value":"","msg":"password must be a strong password","path":"password","location":"body"}]}

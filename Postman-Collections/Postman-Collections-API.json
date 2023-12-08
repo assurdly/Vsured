@@ -15044,6 +15044,30 @@
 				},
 				{
 					"name": "create guest- Empty mobileNumber field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d7885a21-eb6d-4e80-b788-be8083d21cc6",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Your test error message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].msg).to.eql(\"mobileNumber required\");\r",
+									"});\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].type).to.eql(\"field\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "49e92aea-69bf-45e8-872a-7823ba2e9c3e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -15059,7 +15083,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

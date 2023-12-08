@@ -14500,7 +14500,31 @@
 					]
 				},
 				{
-					"name": "create guest Copy 2",
+					"name": "create guest-Empty email field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b678c4d5-3ed4-4ccd-a1bd-7dd1e6f34d5d",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Your test error message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].msg).to.eql(\"email required\");\r",
+									"});\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].type).to.eql(\"field\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "77f4f466-cfe6-4e00-b69a-eb1c729568fd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -14657,7 +14681,31 @@
 					]
 				},
 				{
-					"name": "create guest Copy 3",
+					"name": "create guest-Wrong email format",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "150d143f-f09a-423a-843c-d475aabd9fd8",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Your test error message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].msg).to.eql(\"email required\");\r",
+									"});\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error[0].type).to.eql(\"field\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "fefc29c5-a310-49f2-876a-1d45baa5c7cd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -14673,7 +14721,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin.\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -14906,6 +14954,477 @@
 						},
 						{
 							"id": "7dea0ba6-4a26-41d0-a40d-aad4fcc63b01",
+							"name": "success2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDEzODQwMTR9.DhWPNp2vnKNeLa1WAhdMUEQQxb6jx8sB4MKkROPdWY0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/guest/new"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Nov 2023 22:43:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "create guest Copy 5",
+					"id": "49e92aea-69bf-45e8-872a-7823ba2e9c3e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDEzODQwMTR9.DhWPNp2vnKNeLa1WAhdMUEQQxb6jx8sB4MKkROPdWY0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/guest/new"
+					},
+					"response": [
+						{
+							"id": "1f942e00-6696-43db-a201-306accca41b4",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDEzODQwMTR9.DhWPNp2vnKNeLa1WAhdMUEQQxb6jx8sB4MKkROPdWY0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/guest/new"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Nov 2023 22:42:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						},
+						{
+							"id": "5968ca8b-d9cf-4d1c-91ae-a2cd3158cf4a",
+							"name": "success2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDEzODQwMTR9.DhWPNp2vnKNeLa1WAhdMUEQQxb6jx8sB4MKkROPdWY0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/guest/new"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Nov 2023 22:43:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "create guest Copy 6",
+					"id": "5c551e8c-b10e-4c21-a302-601ba83baa01",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDEzODQwMTR9.DhWPNp2vnKNeLa1WAhdMUEQQxb6jx8sB4MKkROPdWY0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/guest/new"
+					},
+					"response": [
+						{
+							"id": "550aa849-e34d-47ef-92cf-174ec89f9097",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDEzODQwMTR9.DhWPNp2vnKNeLa1WAhdMUEQQxb6jx8sB4MKkROPdWY0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/guest/new"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Nov 2023 22:42:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						},
+						{
+							"id": "f9daf0f6-9fe7-4e97-bcc3-85bfe4ff592f",
+							"name": "success2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDEzODQwMTR9.DhWPNp2vnKNeLa1WAhdMUEQQxb6jx8sB4MKkROPdWY0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/guest/new"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Nov 2023 22:43:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "create guest Copy 7",
+					"id": "19d90f6b-e385-4c9b-b481-c5de45dc753f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDEzODQwMTR9.DhWPNp2vnKNeLa1WAhdMUEQQxb6jx8sB4MKkROPdWY0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/guest/new"
+					},
+					"response": [
+						{
+							"id": "8bae4bd6-1010-47d4-b0b4-6214a5bc5516",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDEzODQwMTR9.DhWPNp2vnKNeLa1WAhdMUEQQxb6jx8sB4MKkROPdWY0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/guest/new"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Nov 2023 22:42:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						},
+						{
+							"id": "a092d165-1ca8-405c-8116-f1f6085c5138",
 							"name": "success2",
 							"originalRequest": {
 								"method": "POST",

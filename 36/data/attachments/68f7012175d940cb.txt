@@ -1,0 +1,1 @@
+{"error":[{"type":"field","value":"","msg":"latitude required","path":"latitude","location":"body"}]}

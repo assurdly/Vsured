@@ -14359,7 +14359,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
+							"raw": "{\r\n    \"name\":\"\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -14516,7 +14516,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"vipin@g.com\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Vipin\",\r\n    \"email\":\"\",\r\n    \"createdBy\":1,\r\n    \"countryCode\":\"+255\",\r\n    \"mobileNumber\":\"987654331\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

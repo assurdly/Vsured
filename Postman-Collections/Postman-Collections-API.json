@@ -16042,7 +16042,7 @@
 					]
 				},
 				{
-					"name": "Create Event Copy 2",
+					"name": "Create Event-Empty start date",
 					"id": "d8e068fb-6aaa-442d-8e45-8286dd230b36",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -16058,7 +16058,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"Event 1\",\r\n    \"detail\":\"Very good event\",\r\n    \"startDate\":\"2023-11-30 22:42:33\",\r\n    \"endDate\":\"2023-11-30 22:42:33\",\r\n    \"eventAddress\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"event_users\":[1,2],\r\n    \"event_guests\":[1]\r\n}",
+							"raw": "{\r\n    \"title\":\"Event 1\",\r\n    \"detail\":\"Very good event\",\r\n    \"startDate\":\"\",\r\n    \"endDate\":\"2023-11-30 22:42:33\",\r\n    \"eventAddress\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"event_users\":[1,2],\r\n    \"event_guests\":[1]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

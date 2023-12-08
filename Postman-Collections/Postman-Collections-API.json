@@ -14361,7 +14361,7 @@
 									"});\r",
 									"pm.test(\"Your test error message\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.error[0].msg).to.eql(\"latitude required\");\r",
+									"    pm.expect(jsonData.error[0].msg).to.eql(\"name required\");\r",
 									"});\r",
 									"pm.test(\"Your test name\", function () {\r",
 									"    var jsonData = pm.response.json();\r",

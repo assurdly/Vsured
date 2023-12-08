@@ -15850,7 +15850,7 @@
 			"name": "Events QA",
 			"item": [
 				{
-					"name": "Create Event",
+					"name": "Create Event-Successful",
 					"id": "c4ad1900-8b64-41f7-aeff-25d2ce3c044b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -16153,6 +16153,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -16246,6 +16252,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -16339,6 +16351,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -16432,6 +16450,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -16525,6 +16549,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -16612,12 +16642,15 @@
 					]
 				},
 				{
-					"name": "Create Event Copy 8",
+					"name": "Create Event-No Auth Token",
 					"id": "45723e99-ca3e-4f33-af9b-2b2c94044771",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -16705,12 +16738,18 @@
 					]
 				},
 				{
-					"name": "Create Event Copy 9",
+					"name": "Create Event-Invalid/Mismatched Auth Token",
 					"id": "0637a4d7-0f6f-466e-b239-1d4364fe5578",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnSdfmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvcmVzb3VyY2VzL3BhbmljcyIsIi9hcGkvcGFuaWMvbGlzdCIsIi9hcGkvcGFuaWMvbmV3IiwiL2FwaS9wYW5pYy9kZWxldGUiLCIvcmVzb3VyY2VzL2d1ZXN0cyIsIi9yZXNvdXJjZXMvZXZlbnRzIiwiL3Jlc291cmNlcy9hcHBvaW50bWVudHMiLCIvcmVzb3VyY2VzL2FjY2Vzc19jb2RlcyIsIi9hcGkvZ3Vlc3QvbGlzdCIsIi9hcGkvZ3Vlc3QvbmV3IiwiL2FwaS9ndWVzdC9kZWxldGUiLCIvYXBpL2d1ZXN0L2VkaXQiLCIvYXBpL2d1ZXN0L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiXSwibGFuZ3VhZ2UiOjEsImxldmVsIjoxfSwiaWF0IjoxNzAxODcwMDc5fQ.rVrb2bnOiY6XvolEluqDxVCt4v99GYXDs2KizNfYa_I"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{

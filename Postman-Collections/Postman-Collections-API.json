@@ -16840,7 +16840,7 @@
 			"id": "c7c6fee5-a425-4cd2-a24f-910a8751f06c"
 		},
 		{
-			"name": "Appointments Copy",
+			"name": "Appointments",
 			"item": [
 				{
 					"name": "Create Appointment",
@@ -16939,7 +16939,7 @@
 							]
 						},
 						{
-							"name": "Create Appointment Copy 2",
+							"name": "Create Appointment- Empty appointment field",
 							"id": "8a72624e-7eb3-4b18-a0fc-3aaed2bd7e84",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -16955,7 +16955,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"appointmentFor\":1,\r\n    \"detail\":\"Very good event\",\r\n    \"startDate\":\"2023-11-30 22:42:33\",\r\n    \"endDate\":\"2023-11-30 22:42:33\",\r\n    \"accessCodeType\":\"individual\",\r\n    \"address\":\"Kapil\",\r\n    \"city\":\"heloo\",\r\n    \"state\":\"something\",\r\n    \"country\":\"India\",\r\n    \"pincode\":\"123456\",\r\n    \"latitude\":23.40000,\r\n    \"longitude\":24.525,\r\n    \"appointment_users\":[1,2],\r\n    \"appointment_guests\":[\r\n            {\r\n                \"name\":\"Vipin\",\r\n                \"email\":\"vipin@g.com\",\r\n                \"createdBy\":1,\r\n                \"countryCode\":\"+255\",\r\n                \"mobileNumber\":\"987654331\"\r\n            }\r\n        ]\r\n}",
+									"raw": "{\r\n    \"appointmentFor\":\"\",\r\n    \"detail\":\"Very good event\",\r\n    \"startDate\":\"2023-11-30 22:42:33\",\r\n    \"endDate\":\"2023-11-30 22:42:33\",\r\n    \"accessCodeType\":\"individual\",\r\n    \"address\":\"Kapil\",\r\n    \"city\":\"heloo\",\r\n    \"state\":\"something\",\r\n    \"country\":\"India\",\r\n    \"pincode\":\"123456\",\r\n    \"latitude\":23.40000,\r\n    \"longitude\":24.525,\r\n    \"appointment_users\":[1,2],\r\n    \"appointment_guests\":[\r\n            {\r\n                \"name\":\"Vipin\",\r\n                \"email\":\"vipin@g.com\",\r\n                \"createdBy\":1,\r\n                \"countryCode\":\"+255\",\r\n                \"mobileNumber\":\"987654331\"\r\n            }\r\n        ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"

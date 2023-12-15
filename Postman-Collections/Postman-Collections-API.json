@@ -7318,12 +7318,18 @@
 							]
 						},
 						{
-							"name": "Create Community Copy 3",
+							"name": "Create Community-Empty country",
 							"id": "80844814-6ebc-443a-ada0-567cfe6bc565",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -7334,7 +7340,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
+									"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7475,12 +7481,18 @@
 							]
 						},
 						{
-							"name": "Create Community Copy 4",
+							"name": "Create Community-Empty zipcode",
 							"id": "1c59c80a-a81b-4560-b438-69338d65e264",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -7491,7 +7503,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
+									"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7567,6 +7579,323 @@
 								},
 								{
 									"id": "d8435706-6279-4b7c-b717-483a02d09577",
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "auth-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJyb3V0ZXMiOlsiL2NvbW11bml0eSIsIi9zdWJzY3JpcHRpb24iLCIvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3NzMwMjF9.3TcuAHHPhQ2-eSi3kzZ1CwxVzZhSrL9GR5cGgGGZWOM",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/community/new"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "31"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 Nov 2023 02:03:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Community-No Auth Token",
+							"id": "79aee39e-c148-4157-a1c7-7bc51223d013",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/community/new"
+							},
+							"response": [
+								{
+									"id": "51d285a6-8865-4802-9ee2-0231c74370f3",
+									"name": "community name need to be unique",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "auth-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJyb3V0ZXMiOlsiL2NvbW11bml0eSIsIi9zdWJzY3JpcHRpb24iLCIvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3NzMwMjF9.3TcuAHHPhQ2-eSi3kzZ1CwxVzZhSrL9GR5cGgGGZWOM",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\r\n    \"name\":\"Community 3\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"users\":{\r\n        \"email\":\"a4@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/community/new"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "28"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1c-bRLCPsNo8jH4aCp7lBvPAPsDjPM\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 23 Nov 2023 22:00:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"error\": \"Validation error\"\n}"
+								},
+								{
+									"id": "1804e871-843d-4e76-a933-13040b75c997",
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "auth-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJyb3V0ZXMiOlsiL2NvbW11bml0eSIsIi9zdWJzY3JpcHRpb24iLCIvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3NzMwMjF9.3TcuAHHPhQ2-eSi3kzZ1CwxVzZhSrL9GR5cGgGGZWOM",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/community/new"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "31"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f-POpc/951m75QkixLAwyJVVBE8gI\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 Nov 2023 02:03:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Community Copy 6",
+							"id": "a25b5e10-b1bc-4796-a52a-fd6996c656be",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJjb21tdW5pdHkiOm51bGwsInJvdXRlcyI6WyIvY29tbXVuaXR5IiwiL3N1YnNjcmlwdGlvbiIsIi9wYXltZW50cyIsIi9hcGkvcGF5bWVudC9saXN0IiwiL2FwaS9wYXltZW50L25ldyIsIi9hcGkvcGF5bWVudC9kZWxldGUiLCIvYXBpL3BheW1lbnQvZWRpdCIsIi9hcGkvcGF5bWVudC9zaG93IiwiL2FwaS9zdWJzY3JpcHRpb24vbGlzdCIsIi9hcGkvc3Vic2NyaXB0aW9uL25ldyIsIi9hcGkvc3Vic2NyaXB0aW9uL2RlbGV0ZSIsIi9hcGkvc3Vic2NyaXB0aW9uL2VkaXQiLCIvYXBpL3N1YnNjcmlwdGlvbi9zaG93IiwiL2FwaS9jb21tdW5pdHkvbGlzdCIsIi9hcGkvY29tbXVuaXR5L25ldyIsIi9hcGkvY29tbXVuaXR5L2RlbGV0ZSIsIi9hcGkvY29tbXVuaXR5L2VkaXQiLCIvYXBpL2NvbW11bml0eS9zaG93Il0sImxhbmd1YWdlIjoxLCJsZXZlbCI6MX0sImlhdCI6MTcwMDc5MTU4NH0.09MPhxEZZXndd1Jqf0z6rT68VEErk-dvw6_V6sZ1wes",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/community/new"
+							},
+							"response": [
+								{
+									"id": "084c5acb-1cc4-46c8-b229-f0d9d632f94a",
+									"name": "community name need to be unique",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "auth-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJyb3V0ZXMiOlsiL2NvbW11bml0eSIsIi9zdWJzY3JpcHRpb24iLCIvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDA3NzMwMjF9.3TcuAHHPhQ2-eSi3kzZ1CwxVzZhSrL9GR5cGgGGZWOM",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\r\n    \"name\":\"Community 3\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"users\":{\r\n        \"email\":\"a4@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/community/new"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "28"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1c-bRLCPsNo8jH4aCp7lBvPAPsDjPM\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 23 Nov 2023 22:00:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"error\": \"Validation error\"\n}"
+								},
+								{
+									"id": "7e3430cc-de1c-459a-ac4f-6a3038e2067c",
 									"name": "success",
 									"originalRequest": {
 										"method": "POST",

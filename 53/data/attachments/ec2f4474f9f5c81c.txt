@@ -1,0 +1,7 @@
+{
+    "email":"",
+    "language":1,
+    "password":"Admin@123",
+    "role":1,
+    "name":"Vipin"
+}

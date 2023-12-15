@@ -1,0 +1,7 @@
+{
+    "name":"Vipin",
+    "email":"vipin@g.com",
+    "createdBy":1,
+    "countryCode":"+255",
+    "mobileNumber":"987654331"
+}

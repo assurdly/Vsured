@@ -1,0 +1,5 @@
+{
+    "emergency":"fire",
+    "latitude":23.0001,
+    "longitude":24.00020
+}

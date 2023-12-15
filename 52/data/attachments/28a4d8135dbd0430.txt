@@ -1,0 +1,1 @@
+{"message":"Success","data":[{"id":1,"name":"Monthly Rend","description":"pay on time","amount":1900,"currency":"TZS","period":"hourly"},{"id":2,"name":"Electric bill","description":"pay on time","amount":1900,"currency":"TZS","period":"hourly"}]}

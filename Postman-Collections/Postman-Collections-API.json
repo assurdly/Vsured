@@ -16945,6 +16945,105 @@
 							]
 						},
 						{
+							"name": "Create Appointment Copy",
+							"id": "b54f1db6-129d-4546-a06e-937a5880eafa",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiVmlwaW4iLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbGlzdCIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9saXN0IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDE5MzY4NzF9.BMDpj2odlu2jM8qj5F3ITFLgkO9i64XB9tqBbmGaJXE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"appointmentFor\":1,\r\n    \"detail\":\"Very good event\",\r\n    \"startDate\":\"2023-11-30 22:42:33\",\r\n    \"endDate\":\"2023-11-30 22:42:33\",\r\n    \"accessCodeType\":\"individual\",\r\n    \"address\":\"Kapil\",\r\n    \"city\":\"heloo\",\r\n    \"state\":\"something\",\r\n    \"country\":\"India\",\r\n    \"pincode\":\"123456\",\r\n    \"latitude\":23.40000,\r\n    \"longitude\":24.525,\r\n    \"appointment_users\":[1,2],\r\n    \"appointment_guests\":[\r\n            {\r\n                \"name\":\"Vipin\",\r\n                \"email\":\"vipin@g.com\",\r\n                \"createdBy\":1,\r\n                \"countryCode\":\"+255\",\r\n                \"mobileNumber\":\"987654331\"\r\n            }\r\n        ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/appointment/new"
+							},
+							"response": [
+								{
+									"id": "dee13004-d1ac-4d1e-b102-c4f29f44127d",
+									"name": "Create Appointment",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "auth-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiVmlwaW4iLCJyb3V0ZXMiOlsiL3Jlc291cmNlcy9jb21tdW5pdGllcyIsIi9yZXNvdXJjZXMvc3Vic2NyaXB0aW9ucyIsIi9yZXNvdXJjZXMvcGF5bWVudHMiLCIvYXBpL3BheW1lbnQvbGlzdCIsIi9hcGkvcGF5bWVudC9uZXciLCIvYXBpL3BheW1lbnQvZGVsZXRlIiwiL2FwaS9wYXltZW50L2VkaXQiLCIvYXBpL3BheW1lbnQvc2hvdyIsIi9hcGkvc3Vic2NyaXB0aW9uL2xpc3QiLCIvYXBpL3N1YnNjcmlwdGlvbi9uZXciLCIvYXBpL3N1YnNjcmlwdGlvbi9kZWxldGUiLCIvYXBpL3N1YnNjcmlwdGlvbi9lZGl0IiwiL2FwaS9zdWJzY3JpcHRpb24vc2hvdyIsIi9hcGkvY29tbXVuaXR5L2xpc3QiLCIvYXBpL2NvbW11bml0eS9uZXciLCIvYXBpL2NvbW11bml0eS9kZWxldGUiLCIvYXBpL2NvbW11bml0eS9lZGl0IiwiL2FwaS9jb21tdW5pdHkvc2hvdyIsIi9yZXNvdXJjZXMvcGFuaWNzIiwiL2FwaS9wYW5pYy9saXN0IiwiL2FwaS9wYW5pYy9uZXciLCIvYXBpL3BhbmljL2RlbGV0ZSIsIi9yZXNvdXJjZXMvZ3Vlc3RzIiwiL3Jlc291cmNlcy9ldmVudHMiLCIvcmVzb3VyY2VzL2FwcG9pbnRtZW50cyIsIi9yZXNvdXJjZXMvYWNjZXNzX2NvZGVzIiwiL2FwaS9ndWVzdC9saXN0IiwiL2FwaS9ndWVzdC9uZXciLCIvYXBpL2d1ZXN0L2RlbGV0ZSIsIi9hcGkvZ3Vlc3QvZWRpdCIsIi9hcGkvZ3Vlc3Qvc2hvdyIsIi9hcGkvZXZlbnQvbGlzdCIsIi9hcGkvZXZlbnQvbmV3IiwiL2FwaS9ldmVudC9kZWxldGUiLCIvYXBpL2V2ZW50L2VkaXQiLCIvYXBpL2V2ZW50L3Nob3ciLCIvYXBpL2FwcG9pbnRtZW50L2xpc3QiLCIvYXBpL2FwcG9pbnRtZW50L25ldyIsIi9hcGkvYXBwb2ludG1lbnQvZGVsZXRlIiwiL2FwaS9hcHBvaW50bWVudC9lZGl0IiwiL2FwaS9hcHBvaW50bWVudC9zaG93IiwiL2FwaS9hY2Nlc3MtY29kZS9saXN0IiwiL2FwaS9hY2Nlc3MtY29kZS9uZXciLCIvYXBpL2FjY2Vzcy1jb2RlL2RlbGV0ZSIsIi9hcGkvYWNjZXNzLWNvZGUvZWRpdCIsIi9hcGkvYWNjZXNzLWNvZGUvc2hvdyJdLCJsYW5ndWFnZSI6MSwibGV2ZWwiOjF9LCJpYXQiOjE3MDE5MzY4NzF9.BMDpj2odlu2jM8qj5F3ITFLgkO9i64XB9tqBbmGaJXE",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"appointmentFor\":1,\r\n    \"detail\":\"Very good event\",\r\n    \"startDate\":\"2023-11-30 22:42:33\",\r\n    \"endDate\":\"2023-11-30 22:42:33\",\r\n    \"accessCodeType\":\"individual\",\r\n    \"address\":\"Kapil\",\r\n    \"city\":\"heloo\",\r\n    \"state\":\"something\",\r\n    \"country\":\"India\",\r\n    \"pincode\":\"123456\",\r\n    \"latitude\":23.40000,\r\n    \"longitude\":24.525,\r\n    \"appointment_users\":[1,2],\r\n    \"appointment_guests\":[\r\n            {\r\n                \"name\":\"Vipin\",\r\n                \"email\":\"vipin@g.com\",\r\n                \"createdBy\":1,\r\n                \"countryCode\":\"+255\",\r\n                \"mobileNumber\":\"987654331\"\r\n            }\r\n        ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/appointment/new"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "506"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1fa-5Z0Uf0otQ8+MwvjIGI1hePVKUfE\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 07 Dec 2023 16:00:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"accessCodes\": [\n            {\n                \"automatic\": true,\n                \"banned\": false,\n                \"userType\": \"other\",\n                \"code\": \"ee1696b1-b508-4c93-8f44-645f9f2f4176\",\n                \"id\": 15,\n                \"codeType\": \"single\",\n                \"user\": 1,\n                \"appointment\": 7,\n                \"createdAt\": \"2023-12-07T16:00:39.106Z\",\n                \"updatedAt\": \"2023-12-07T16:00:39.106Z\"\n            },\n            {\n                \"automatic\": true,\n                \"banned\": false,\n                \"userType\": \"other\",\n                \"code\": \"0a0e46ba-30b6-4c3d-aaa6-55049c501084\",\n                \"id\": 16,\n                \"codeType\": \"single\",\n                \"user\": 2,\n                \"appointment\": 7,\n                \"createdAt\": \"2023-12-07T16:00:39.106Z\",\n                \"updatedAt\": \"2023-12-07T16:00:39.106Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
 							"name": "Create Appointment- Empty appointment field",
 							"id": "8a72624e-7eb3-4b18-a0fc-3aaed2bd7e84",
 							"protocolProfileBehavior": {

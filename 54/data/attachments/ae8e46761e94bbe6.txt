@@ -1,0 +1,22 @@
+{
+
+    "name":"Community 8",
+    "description":"Very good Community",
+    "type":"Gated Residence",
+    "logo":"https://google.com",
+    "communit_addresses":{
+        "address":"Kapil",
+        "city":"heloo",
+        "state":"something",
+        "country":"India",
+        "pincode":"123456",
+        "latitude":"23.40000",
+        "longitude":"24.525"
+    },
+    "community_users":{
+        "email":"a8@g.com",
+        "language":1,
+        "role":2,
+        "name":"Vipin"
+    }
+}

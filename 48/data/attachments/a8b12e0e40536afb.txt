@@ -1,0 +1,8 @@
+{
+    "user":3,
+    "paymentType":"",
+    "renewAmount":1000,
+    "currency":"TZS",
+    "startDate":"2023-11-24 01:52:02",
+    "renewDate":"2023-11-24 01:52:02"
+}

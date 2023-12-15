@@ -1,0 +1,11 @@
+{
+    "Date": "Fri, 15 Dec 2023 08:29:41 GMT",
+    "Server": "Apache/2.4.57 (Ubuntu)",
+    "X-Powered-By": "Express",
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "28",
+    "ETag": "W/\"1c-bRLCPsNo8jH4aCp7lBvPAPsDjPM\"",
+    "Via": "1.1 backend.aapkistore.com (Apache/2.4.57)",
+    "Connection": "close"
+}

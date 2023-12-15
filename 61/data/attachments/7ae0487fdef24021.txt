@@ -1,0 +1,17 @@
+{
+    "title":"Event 1",
+    "detail":"Very good event",
+    "startDate":"2023-11-30 22:42:33",
+    "endDate":"",
+    "eventAddress":{
+        "address":"Kapil",
+        "city":"heloo",
+        "state":"something",
+        "country":"India",
+        "pincode":"123456",
+        "latitude":"23.40000",
+        "longitude":"24.525"
+    },
+    "event_users":[1,2],
+    "event_guests":[1]
+}

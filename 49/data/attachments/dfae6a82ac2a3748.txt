@@ -1,0 +1,8 @@
+{
+    "mobileNumber":"9876543211",
+    "countryCode":"",
+    "language":1,
+    "password":"Admin@123",
+    "role":1,
+    "name":"Vipin"
+}

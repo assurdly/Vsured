@@ -18333,6 +18333,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [
 									{
@@ -18441,7 +18447,7 @@
 							]
 						},
 						{
-							"name": "get by id Copy 3",
+							"name": "get by id-No Auth",
 							"id": "948f87e3-2b9e-4ea9-90e5-f7c09a2ada2a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true

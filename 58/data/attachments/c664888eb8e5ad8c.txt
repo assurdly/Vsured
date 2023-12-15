@@ -1,0 +1,8 @@
+{
+    "mobileNumber":"",
+    "countryCode":"+91",
+    "language":1,
+    "password":"Admin@123",
+    "role":1,
+    "name":"Vipin"
+}

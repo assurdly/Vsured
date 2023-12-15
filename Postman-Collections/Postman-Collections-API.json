@@ -18094,6 +18094,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [
 									{
@@ -18201,12 +18207,18 @@
 							]
 						},
 						{
-							"name": "get by id Copy",
+							"name": "get by id-Empty id",
 							"id": "5d34db98-0687-4b60-b9d0-f8ad86ebd135",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [
 									{
@@ -18216,7 +18228,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/appointment/show?id=7&page=1",
+									"raw": "{{baseUrl}}/appointment/show?page=1",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -18227,7 +18239,8 @@
 									"query": [
 										{
 											"key": "id",
-											"value": "7"
+											"value": "7",
+											"disabled": true
 										},
 										{
 											"key": "page",
@@ -18314,7 +18327,7 @@
 							]
 						},
 						{
-							"name": "get by id Copy 2",
+							"name": "get by id-Empty page",
 							"id": "a4231ba5-0221-4397-9edd-585210629356",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -18329,7 +18342,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/appointment/show?id=7&page=1",
+									"raw": "{{baseUrl}}/appointment/show?id=7",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -18344,7 +18357,8 @@
 										},
 										{
 											"key": "page",
-											"value": "1"
+											"value": "1",
+											"disabled": true
 										}
 									]
 								}

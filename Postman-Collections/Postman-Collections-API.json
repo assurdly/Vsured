@@ -18453,6 +18453,9 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "GET",
 								"header": [
 									{
@@ -18560,7 +18563,7 @@
 							]
 						},
 						{
-							"name": "get by id Copy 4",
+							"name": "get by id-Invalid/Mismatched Auth Token",
 							"id": "446459a7-c32c-4977-a4b6-cf40286e2f53",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true

@@ -6992,12 +6992,18 @@
 							]
 						},
 						{
-							"name": "Create Community Copy",
+							"name": "Create Community-Empty city",
 							"id": "89e9e185-73eb-4d02-a956-5eb2b1903511",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -7008,7 +7014,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
+									"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7149,12 +7155,18 @@
 							]
 						},
 						{
-							"name": "Create Community Copy 2",
+							"name": "Create Community-Empty state",
 							"id": "256722b3-7391-4db5-a3c1-1633dc138925",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{authToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -7165,7 +7177,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"something\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
+									"raw": "{\r\n\r\n    \"name\":\"Community 8\",\r\n    \"description\":\"Very good Community\",\r\n    \"type\":\"Gated Residence\",\r\n    \"logo\":\"https://google.com\",\r\n    \"communit_addresses\":{\r\n        \"address\":\"Kapil\",\r\n        \"city\":\"heloo\",\r\n        \"state\":\"\",\r\n        \"country\":\"India\",\r\n        \"pincode\":\"123456\",\r\n        \"latitude\":\"23.40000\",\r\n        \"longitude\":\"24.525\"\r\n    },\r\n    \"community_users\":{\r\n        \"email\":\"a8@g.com\",\r\n        \"language\":1,\r\n        \"role\":2,\r\n        \"name\":\"Vipin\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
